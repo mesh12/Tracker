@@ -56,7 +56,7 @@ import javax.net.ssl.HttpsURLConnection;
 
 public class DriverMapsActivity extends FragmentActivity implements OnMapReadyCallback,GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, com.google.android.gms.location.LocationListener {
 
-    private GoogleMap mMap;
+    public static GoogleMap mMap;
     double latitude, longitude, latitude1, longitude1;
     final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
     String route = "pescollege,corporationbangalore,MGRoadbangalore,indiranagar";
@@ -337,7 +337,7 @@ public class DriverMapsActivity extends FragmentActivity implements OnMapReadyCa
 
         LatLng loc = new LatLng(currentLatitude,currentLongitude);
 
-        mMap.addMarker(new MarkerOptions().position(loc).title("current location"));
+       // mMap.addMarker(new MarkerOptions().position(loc).title("current location"));
         DriverSendCoordinates ob=new DriverSendCoordinates();
         ob.execute(coordinates);
     }
